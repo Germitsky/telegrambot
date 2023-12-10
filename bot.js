@@ -2,9 +2,15 @@ const mysql2 = require("mysql2")
 const TelegramApi = require ('node-telegram-bot-api')
 const token = '6545699115:AAFykYEBwpJnqAKoMR8mRTYQNIIGUGLGA88'
 const bot = new TelegramApi(token, {
-	dropPendingUpdates: true
+	dropPendingUpdates: true,
+	webHook: {
+		port: 3000,
+		autoOpen: false
+	}
 })
 
+bot.setWebHook(`https://892e-94-31-81-120.ngrok.io/bot${token}`)
+bot.openWebHook()
 
 const {Builder, By, Key} = require ("selenium-webdriver")
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay)) // Too lazy to write timeout
