@@ -3,14 +3,9 @@ const TelegramApi = require ('node-telegram-bot-api')
 const token = '6545699115:AAFykYEBwpJnqAKoMR8mRTYQNIIGUGLGA88'
 const bot = new TelegramApi(token, {
 	dropPendingUpdates: true,
-	webHook: {
-		port: 3000,
-		autoOpen: false,
-		dropPendingUpdates: true
-	}
+	polling: true
 })
-bot.openWebHook()
-bot.setWebHook(`https://bf75-94-31-81-120.ngrok.io/bot${token}`)
+
 
 const {Builder, By, Key} = require ("selenium-webdriver")
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay)) // Too lazy to write timeout
