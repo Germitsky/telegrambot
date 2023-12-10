@@ -2,8 +2,7 @@ const mysql2 = require("mysql2")
 const TelegramApi = require ('node-telegram-bot-api')
 const token = '6545699115:AAFykYEBwpJnqAKoMR8mRTYQNIIGUGLGA88'
 const bot = new TelegramApi(token, {
-	dropPendingUpdates: true,
-	polling: true
+	dropPendingUpdates: true
 })
 
 
